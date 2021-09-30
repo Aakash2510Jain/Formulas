@@ -1,0 +1,4 @@
+Salesforce Formulas:-
+For geeting weekday and date
+CASE( WEEKDAY( DATEVALUE(CreatedDate)), 1, "Sunday", 2, "Monday", 3, "Tuesday", 4, "Wednesday", 5, "Thursday", 6, "Friday", 7, "Saturday","Error") & ' - ' & TEXT(DATEVALUE(CreatedDate))
+output : Thursday - 2021-09-30
