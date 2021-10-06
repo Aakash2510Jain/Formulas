@@ -2,3 +2,9 @@ Salesforce Formulas:-
 For geeting weekday and date
 CASE( WEEKDAY( DATEVALUE(CreatedDate)), 1, "Sunday", 2, "Monday", 3, "Tuesday", 4, "Wednesday", 5, "Thursday", 6, "Friday", 7, "Saturday","Error") & ' - ' & TEXT(DATEVALUE(CreatedDate))
 output : Thursday - 2021-09-30
+
+
+Input - 10/5/2021, 3:43 PM(DATETIME)
+IF( OR( VALUE( MID( TEXT(   End_DateTime__c + 330/1440), 12, 2 ) ) = 0, VALUE( MID( TEXT( End_DateTime__c + 330/1440 ), 12, 2 ) ) = 12 ), "12", TEXT( VALUE( MID( TEXT( End_DateTime__c + 330/1440 ), 12, 2 ) ) - IF( VALUE( MID( TEXT( End_DateTime__c + 330/1440), 12, 2 ) ) < 12, 0, 12 ) ) ) & ":" & MID( TEXT( End_DateTime__c + 330/1440), 15, 2 ) &" " & IF( VALUE( MID( TEXT( End_DateTime__c + 330/1440 ), 12, 2 ) ) < 12, "AM", "PM" )
+output
+2:43: PM
