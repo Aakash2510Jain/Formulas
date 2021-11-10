@@ -8,3 +8,6 @@ Input - 10/5/2021, 3:43 PM(DATETIME)
 IF( OR( VALUE( MID( TEXT(   End_DateTime__c + 330/1440), 12, 2 ) ) = 0, VALUE( MID( TEXT( End_DateTime__c + 330/1440 ), 12, 2 ) ) = 12 ), "12", TEXT( VALUE( MID( TEXT( End_DateTime__c + 330/1440 ), 12, 2 ) ) - IF( VALUE( MID( TEXT( End_DateTime__c + 330/1440), 12, 2 ) ) < 12, 0, 12 ) ) ) & ":" & MID( TEXT( End_DateTime__c + 330/1440), 15, 2 ) &" " & IF( VALUE( MID( TEXT( End_DateTime__c + 330/1440 ), 12, 2 ) ) < 12, "AM", "PM" )
 output
 2:43: PM
+
+
+IF( (TODAY() - DATEVALUE(LastModifiedDate)) < 30 , 'Last Updated in 30 days' , IF(((TODAY() - DATEVALUE(LastModifiedDate)) < 60),'Last updated in 30 - 60 days',IF(((TODAY() - DATEVALUE(LastModifiedDate)) < 90),'Last updated in 60 - 90 days', 'Last updated > 90 days')))
